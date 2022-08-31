@@ -1,0 +1,23 @@
+{
+  "name": "the-bash-vendors-send-queue-worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gigmasters/the-bash-vendors-send-queue-worker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gigmasters/the-bash-vendors-send-queue-worker/issues"
+  },
+  "homepage": "https://github.com/Gigmasters/the-bash-vendors-send-queue-worker#readme",
+  "dependencies": {
+    "node-schedule": "^2.1.0"
+  }
+}

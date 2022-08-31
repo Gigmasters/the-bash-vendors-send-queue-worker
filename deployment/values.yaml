@@ -1,0 +1,21 @@
+image:
+  pullPolicy: "Always"
+  repository: "xogroup/the-bash-vendors-send-queue-worker"
+imagePullSecrets:
+  name: "docker-xothebashci"
+namespace: "thebash"
+labels:
+  application: "the-bash-vendors-send-queue-worker"
+  stack: "thebash"
+  role: "api"
+resources:
+  requests:
+    cpu: "0.2"
+    memory: "0.5Gi"
+  limits:
+    cpu: "0.5"
+    memory: "1.0Gi"
+highAvailability:
+  enabled: true
+hpa:
+  enabled: true

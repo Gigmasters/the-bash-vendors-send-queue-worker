@@ -1,0 +1,9 @@
+hpa:
+  minReplicaCount: 1
+  maxReplicaCount: 2
+labels:
+  environment: "qa"
+service:
+  matchSelectors:
+    environment: "qa"
+iamRole: "arn:aws:iam::457046176595:role/vendor-send-queue-worker-qa-eks-role"

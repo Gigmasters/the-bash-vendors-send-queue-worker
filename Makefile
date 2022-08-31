@@ -13,20 +13,19 @@ git_hash=$(shell git rev-parse HEAD)
 build:
 	docker build -f ./docker/Dockerfile -t $(image_name) --build-arg ENV=$ENV .
 
-test:
-	NODE_ENV=test npm run test
-.PHONY: test
-
-code-climate-report:
-	npm run report
-
-test-coverage:
-	./node_modules/.bin/nyc --reporter=text make test
-.PHONY: test-coverage
-
 push:
 	REPOSITORY=${repository} \
 	TAG=${git_hash} \
 	IMAGE_NAME=${image_name} \
 	sh ./docker/scripts/push.sh
 .PHONY: push
+
+docker-compose-pg:
+	docker-compose -f docker/the-bash-vendors-send-queue-worker/pg.yml up
+
+docker-compose-run:
+	docker-compose -f docker/the-bash-vendors-send-queue-worker/development.yml up
+
+docker-compose-stop:
+	docker-compose -f docker/the-bash-vendors-send-queue-worker/development.yml down
+.PHONY: docker-compose-stop

@@ -47,3 +47,4 @@ build/Release
 /esdata-test/*
 !/esdata-test/.gitkeep
 .vscode/*
+.nvmrc

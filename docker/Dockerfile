@@ -1,4 +1,4 @@
-FROM node:14.15.1-slim
+FROM node:14.20.0-slim
 
 RUN apt-get update -qq && \
     apt-get install -y \

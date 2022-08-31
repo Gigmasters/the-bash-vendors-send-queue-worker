@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  server:
+    build:
+      context: ../../
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "3001:3001"
+      - "9229:9229"
+    command: npm run dev
+    volumes:
+      - ../../:/the-bash-vendors-send-queue-worker
+    depends_on:
+      - pg
+
+  pg:
+    image: postgres:12.4-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: thebash
+      POSTGRES_USER: bash_api
+      POSTGRES_PASSWORD: password
+      PGDATA: "/var/lib/postgresql/data/12.4"

@@ -6,5 +6,9 @@ module.exports = {
       password: 'password',
       host: 'pgtest',
     },
+    migrations: {
+      directory: './migrations/test',
+    },
+    seeds: { directory: './seeds/test' },
   },
 };

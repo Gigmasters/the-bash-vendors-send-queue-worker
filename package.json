@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "npx nodemon index.js",
-    "test": "./node_modules/.bin/jest"
+    "test": "NODE_ENV=test npx knex migrate:latest && jest",
+    "test-file": "npm run test"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   "dependencies": {
     "aws-sdk": "^2.1204.0",
     "config": "^3.3.7",
-    "knex": "^2.2.0",
+    "knex": "^2.3.0",
+    "lodash.merge": "^4.6.2",
     "node-schedule": "^2.1.0",
     "pg": "^8.8.0"
   },

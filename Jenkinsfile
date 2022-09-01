@@ -187,7 +187,6 @@ pipeline {
               ]){
               script {
                 setHelmEnvVariables = [
-                  "--set command[0]=./start.sh",
                   "--set env[0].name=NODE_ENV,env[0].value=${KUBERNETES_ENV}",
                   "--set env[1].name=PG_PASSWORD,env[1].value=$PG_PASSWORD",
                   "--set image.tag=${TAG}"

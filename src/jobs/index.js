@@ -7,12 +7,6 @@ const awsHelper = require('../helpers/aws');
 
 const pg = knex(config.get('knex'));
 
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-  pg.on('query', (queryData) => {
-    console.log('sql:', queryData.sql, 'data:', queryData.bindings);
-  });
-}
-
 const sendSQS = () => {
   const table = 'vendor_message';
   const rule = new schedule.RecurrenceRule();

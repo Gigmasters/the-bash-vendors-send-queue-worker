@@ -6,5 +6,6 @@ module.exports = {
       password: 'password',
       host: 'pg',
     },
+    debug: true,
   },
 };

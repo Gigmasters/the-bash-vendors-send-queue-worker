@@ -15,7 +15,7 @@ services:
   pgtest:
     image: postgres:12.4-alpine
     ports:
-      - "5433:5433"
+      - "5433:5432"
     environment:
       POSTGRES_DB: thebash
       POSTGRES_USER: bash_api

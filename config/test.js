@@ -5,6 +5,7 @@ module.exports = {
     connection: {
       password: 'password',
       host: 'pgtest',
+      port: '5432',
     },
     migrations: {
       directory: './migrations/test',

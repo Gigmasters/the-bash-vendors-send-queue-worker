@@ -1,0 +1,9 @@
+hpa:
+  minReplicaCount: 1
+  maxReplicaCount: 2
+labels:
+  environment: "production"
+service:
+  matchSelectors:
+    environment: "production"
+iamRole: "arn:aws:iam::457046176595:role/vendor-send-queue-worker-production-eks-role"

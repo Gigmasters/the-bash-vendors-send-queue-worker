@@ -1,0 +1,21 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "script"
+  },
+  "rules": {
+    "strict": ["error", "global"],
+    "no-param-reassign": ["error", { "props": false }],
+    "prefer-destructuring": ["error", {
+      "VariableDeclarator": { "object": true, "array": false },
+      "AssignmentExpression": { "object": false, "array": false }
+    }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-multi-assign": "off"
+  }
+}

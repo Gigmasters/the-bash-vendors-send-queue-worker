@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  server-test:
+    build:
+      context: ../../
+      dockerfile: ./docker/Dockerfile
+    environment:
+      NODE_ENV: test
+    command: npm test
+    volumes:
+      - ../../:/the-bash-vendors-send-queue-worker
+    depends_on:
+      - pgtest
+  pgtest:
+    image: postgres:12.4-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: thebash
+      POSTGRES_USER: bash_api
+      POSTGRES_PASSWORD: password
